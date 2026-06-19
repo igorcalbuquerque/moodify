@@ -1,0 +1,32 @@
+# dependencies
+node_modules
+
+# bun
+bun.lockb
+.bun
+
+# env
+.env
+.env*.local
+
+# runtime settings written by the in-app setup screen (contains secrets)
+.moodify.json
+
+# local TLS certificates for LAN sharing / server (never commit keys)
+certs/
+*.pem
+*.key
+*.crt
+
+# NOTE: docs/screenshots/ is intentionally NOT ignored — the README needs it.
+
+# build output
+dist
+*.tsbuildinfo
+
+# misc
+.DS_Store
+*.log
+
+# local Claude Code settings (not part of the repo)
+.claude/

@@ -1,0 +1,408 @@
+:root {
+  --bg: #0b0f17;
+  --bg-elev: #141a26;
+  --bg-elev-2: #1c2433;
+  --text: #eef2f8;
+  --muted: #9aa5b8;
+  --accent: #1db954; /* Spotify green */
+  --accent-2: #7c5cff;
+  --danger: #ff6b6b;
+  --radius: 16px;
+  --maxw: 680px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(124, 92, 255, 0.18), transparent 60%),
+    radial-gradient(1000px 500px at -10% 10%, rgba(29, 185, 84, 0.16), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100dvh;
+}
+
+.app {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: max(20px, env(safe-area-inset-top)) 18px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  min-width: 42px;
+  justify-content: center;
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.logo {
+  font-size: 1.6rem;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.card {
+  background: var(--bg-elev);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card.muted {
+  color: var(--muted);
+}
+
+.card.error {
+  border-color: rgba(255, 107, 107, 0.4);
+  color: var(--danger);
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.prompt {
+  width: 100%;
+  resize: vertical;
+  background: var(--bg-elev-2);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: 1.4;
+}
+
+.prompt:focus {
+  outline: none;
+  border-color: var(--accent-2);
+}
+
+.examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  background: var(--bg-elev-2);
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chip:hover:not(:disabled) {
+  color: var(--text);
+  border-color: var(--accent-2);
+}
+
+button,
+.primary {
+  font-family: inherit;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--accent);
+  color: #06210f;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 999px;
+  padding: 14px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s ease, filter 0.15s ease;
+}
+
+.primary:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+.primary:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.spotify::before {
+  content: "♫";
+}
+
+.open {
+  margin-top: 12px;
+}
+
+.ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.ghost:hover {
+  color: var(--text);
+}
+
+.avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.landing p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.result-head {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.result-head h2 {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+}
+
+.cover {
+  width: 96px;
+  height: 96px;
+  border-radius: 12px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(124, 92, 255, 0.18);
+  color: #cabfff;
+  border-radius: 999px;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  margin: 6px 0;
+}
+
+.setup h2 {
+  margin: 0;
+}
+
+.ai-summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  list-style: none;
+}
+
+.ai-summary::-webkit-details-marker {
+  display: none;
+}
+
+details.card {
+  gap: 12px;
+}
+
+details.card[open] .ai-summary {
+  margin-bottom: 2px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field em {
+  color: var(--muted);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.input,
+select.input {
+  width: 100%;
+  background: var(--bg-elev-2);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent-2);
+}
+
+.get-key {
+  float: right;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.get-key:hover {
+  text-decoration: underline;
+}
+
+.redirect {
+  display: block;
+  background: var(--bg-elev-2);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  word-break: break-all;
+  color: var(--accent);
+}
+
+.player {
+  width: 100%;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 4px;
+  color-scheme: normal;
+}
+
+.tracks {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  counter-reset: track;
+}
+
+.track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.track:hover {
+  background: var(--bg-elev-2);
+}
+
+.track-art {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.track-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.track-title {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-title:hover {
+  color: var(--accent);
+}
+
+.track-artist {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.footer {
+  margin-top: auto;
+  padding-top: 12px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+@media (min-width: 520px) {
+  .brand h1 {
+    font-size: 1.7rem;
+  }
+}
