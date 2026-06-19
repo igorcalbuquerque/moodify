@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "description": "An AI agent that turns your mood into a Spotify playlist.",
+  "license": "MIT",
+  "author": "Igor Albuquerque",
   "scripts": {
     "dev": "bun --hot src/server.ts",
     "start": "bun src/server.ts",

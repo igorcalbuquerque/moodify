@@ -155,6 +155,10 @@ there. Spotify requires **HTTPS** for any address that isn't `127.0.0.1`.
 | `bun run dev` | Start Moodify |
 | `bun run typecheck` | Check the code types |
 
+## 📄 License
+
+[MIT](LICENSE) © Igor Albuquerque — made just for fun.
+
 ---
 ---
 
@@ -319,3 +323,7 @@ seja `127.0.0.1`.
 | `bun install` | Instala as dependências (uma vez) |
 | `bun run dev` | Inicia o Moodify |
 | `bun run typecheck` | Verifica os tipos do código |
+
+## 📄 Licença
+
+[MIT](LICENSE) © Igor Albuquerque — feito só por diversão.
